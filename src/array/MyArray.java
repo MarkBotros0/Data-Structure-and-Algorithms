@@ -76,6 +76,7 @@ public class MyArray<T> {
         array.delete(2);
         array.insert(3, "loozz");
         array.printList();
+        System.out.println(array.get(2));
     }
 
 }
