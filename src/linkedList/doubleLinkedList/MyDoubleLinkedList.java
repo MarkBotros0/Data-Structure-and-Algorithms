@@ -1,8 +1,8 @@
-package myLinkedList.doubleLinkedList;
+package linkedList.doubleLinkedList;
 
 import java.util.ArrayList;
 
-public class DoubleLinkedList<T> {
+public class MyDoubleLinkedList<T> {
     private int length;
     private DoubleNode<T> head;
     private DoubleNode<T> tail;
@@ -21,7 +21,6 @@ public class DoubleLinkedList<T> {
         this.tail = newNode;
         this.length++;
     }
-
     public void prepend(T element) {
         DoubleNode<T> newNode = new DoubleNode<>(element);
 
@@ -34,7 +33,6 @@ public class DoubleLinkedList<T> {
         this.head = newNode;
         this.length++;
     }
-
     public void insert(int index, T element) {
         if(index > this.length - 1){
             this.append(element);
@@ -50,7 +48,6 @@ public class DoubleLinkedList<T> {
         }
         this.length++;
     }
-
     private DoubleNode<T> traverse(int index) {
         DoubleNode<T> currNode = this.head;
         for (int i = 0; i < index; i++) {
@@ -58,7 +55,6 @@ public class DoubleLinkedList<T> {
         }
         return currNode;
     }
-
     public void delete (int index){
         DoubleNode<T> nodeToDelete = this.traverse(index);
 
@@ -66,7 +62,6 @@ public class DoubleLinkedList<T> {
         nodeToDelete.getNextNode().setPrevNode(nodeToDelete.getPrevNode());
         this.length--;
     }
-
     public void printList() {
         ArrayList<String> list = new ArrayList<>();
         DoubleNode<T> currNode = this.head;
@@ -75,5 +70,27 @@ public class DoubleLinkedList<T> {
             currNode = currNode.getNextNode();
         }
         System.out.println(list);
+    }
+    public void testList() {
+        MyDoubleLinkedList<String> list = new MyDoubleLinkedList<>();
+
+        list.append("testing");
+        list.append("dod");
+        list.append("hello");
+        list.append("mark");
+        list.append("Botros");
+        list.prepend("1");
+
+        list.printList();
+
+        list.insert(3,"alooo");
+        list.insert(100,"bisho");
+        list.printList();
+
+        list.delete(3);
+        list.delete(5);
+        list.printList();
+
+        System.out.println(list.getLength());
     }
 }

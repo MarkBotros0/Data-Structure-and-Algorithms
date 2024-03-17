@@ -1,4 +1,4 @@
-package myLinkedList.single;
+package linkedList.single;
 
 import java.util.ArrayList;
 
@@ -75,5 +75,30 @@ public class SingleLinkedList<T> {
             currNode = currNode.getNextNode();
         }
         System.out.println(list);
+    }
+
+    public void testList() {
+        SingleLinkedList<String> list = new SingleLinkedList<>();
+
+        list.append("testing");
+        list.append("dod");
+        list.append("hello");
+        list.append("mark");
+        list.append("Botros");
+        list.prepend("1");
+        list.prepend("2");
+        list.prepend("3");
+
+        list.printList();
+
+        list.insert(3,"alooo");
+        list.insert(100,"bisho");
+        list.printList();
+
+        list.delete(3);
+        list.delete(5);
+        list.printList();
+
+        System.out.println(list.getLength());
     }
 }

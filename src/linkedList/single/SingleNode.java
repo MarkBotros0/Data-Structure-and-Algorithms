@@ -1,4 +1,4 @@
-package myLinkedList.single;
+package linkedList.single;
 
 public class SingleNode<T> {
     private T value;
