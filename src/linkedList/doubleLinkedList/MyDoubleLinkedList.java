@@ -71,7 +71,7 @@ public class MyDoubleLinkedList<T> {
         }
         System.out.println(list);
     }
-    public void testList() {
+    public static void testList() {
         MyDoubleLinkedList<String> list = new MyDoubleLinkedList<>();
 
         list.append("testing");

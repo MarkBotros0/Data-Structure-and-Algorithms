@@ -63,7 +63,7 @@ public class MyArray<T> {
         System.out.println(array);
     }
 
-    public void testList() {
+    public static void testList() {
         MyArray<String> array = new MyArray<>();
         array.push("test");
         array.push("hello");
@@ -78,5 +78,4 @@ public class MyArray<T> {
         array.printList();
         System.out.println(array.get(2));
     }
-
 }

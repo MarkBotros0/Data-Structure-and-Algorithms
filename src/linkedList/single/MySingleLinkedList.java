@@ -2,16 +2,15 @@ package linkedList.single;
 
 import java.util.ArrayList;
 
-public class SingleLinkedList<T> {
+public class MySingleLinkedList<T> {
     private int length;
     private SingleNode<T> head;
     private SingleNode<T> tail;
 
-
     public void append(T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
 
-        if(length == 0 ){
+        if (length == 0) {
             this.head = newNode;
         } else {
             this.tail.setNextNode(newNode);
@@ -27,7 +26,7 @@ public class SingleLinkedList<T> {
     public void prepend(T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
 
-        if(length == 0 ){
+        if (length == 0) {
             this.tail = newNode;
         } else {
             newNode.setNextNode(this.head);
@@ -38,7 +37,7 @@ public class SingleLinkedList<T> {
 
     public void insert(int index, T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
-        if(index > this.length - 1){
+        if (index > this.length - 1) {
             this.tail.setNextNode(newNode);
             this.tail = newNode;
         } else {
@@ -59,8 +58,8 @@ public class SingleLinkedList<T> {
         return currNode;
     }
 
-    public void delete (int index){
-        SingleNode<T> nodeBeforeNodeTDelete = this.traverse(index-1);
+    public void delete(int index) {
+        SingleNode<T> nodeBeforeNodeTDelete = this.traverse(index - 1);
         SingleNode<T> nodeToDelete = nodeBeforeNodeTDelete.getNextNode();
 
         nodeBeforeNodeTDelete.setNextNode(nodeToDelete.getNextNode());
@@ -70,15 +69,15 @@ public class SingleLinkedList<T> {
     public void printList() {
         ArrayList<String> list = new ArrayList<>();
         SingleNode<T> currNode = this.head;
-        while (currNode != null){
+        while (currNode != null) {
             list.add(currNode.toString());
             currNode = currNode.getNextNode();
         }
         System.out.println(list);
     }
 
-    public void testList() {
-        SingleLinkedList<String> list = new SingleLinkedList<>();
+    public static void testList() {
+        MySingleLinkedList<String> list = new MySingleLinkedList<>();
 
         list.append("testing");
         list.append("dod");
@@ -89,10 +88,10 @@ public class SingleLinkedList<T> {
         list.prepend("2");
         list.prepend("3");
 
-        list.printList();
+//        list.printList();
 
-        list.insert(3,"alooo");
-        list.insert(100,"bisho");
+        list.insert(3, "alooo");
+        list.insert(100, "bisho");
         list.printList();
 
         list.delete(3);
