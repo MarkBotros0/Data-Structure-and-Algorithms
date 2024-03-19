@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class MyHashTable<K, V> {
     private static final int DEFAULT_CAPACITY = 10;
-    private LinkedList<Entry<K, V>>[] table;
+    private final LinkedList<Entry<K, V>>[] table;
     private int size;
 
     public MyHashTable() {
@@ -15,13 +15,15 @@ public class MyHashTable<K, V> {
         return size;
     }
     public void put(K key, V value) {
-        if (key == null)
+        if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
+        }
 
         int index = this.getIndex(key);
 
-        if (table[index] == null)
+        if (table[index] == null) {
             table[index] = new LinkedList<>();
+        }
 
         for (Entry<K, V> entry : table[index]) {
             if (entry.getKey().equals(key)) {
@@ -51,8 +53,9 @@ public class MyHashTable<K, V> {
     }
 
     public void remove(K key) {
-        if (key == null)
+        if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
+        }
 
         int index = getIndex(key);
         LinkedList<Entry<K, V>> list = table[index];

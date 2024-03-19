@@ -1,12 +1,18 @@
 package linkedList.single;
 
+import linkedList.doubleLinkedList.DoubleNode;
+
 import java.util.ArrayList;
 
 public class MySingleLinkedList<T> {
     private int length;
     private SingleNode<T> head;
     private SingleNode<T> tail;
+    public int getLength() {
+        return length;
+    }
 
+    // O(1)
     public void append(T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
 
@@ -19,10 +25,7 @@ public class MySingleLinkedList<T> {
         this.length++;
     }
 
-    public int getLength() {
-        return length;
-    }
-
+    // O(1)
     public void prepend(T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
 
@@ -35,6 +38,7 @@ public class MySingleLinkedList<T> {
         this.length++;
     }
 
+    // O(n)
     public void insert(int index, T element) {
         SingleNode<T> newNode = new SingleNode<>(element);
         if (index > this.length - 1) {
@@ -50,6 +54,7 @@ public class MySingleLinkedList<T> {
         this.length++;
     }
 
+    // O(n)
     private SingleNode<T> traverse(int index) {
         SingleNode<T> currNode = this.head;
         for (int i = 0; i < index; i++) {
@@ -58,12 +63,25 @@ public class MySingleLinkedList<T> {
         return currNode;
     }
 
+    // O(n)
     public void delete(int index) {
         SingleNode<T> nodeBeforeNodeTDelete = this.traverse(index - 1);
         SingleNode<T> nodeToDelete = nodeBeforeNodeTDelete.getNextNode();
 
         nodeBeforeNodeTDelete.setNextNode(nodeToDelete.getNextNode());
         this.length--;
+    }
+
+    // O(n)
+    public Boolean search(T searchValue){
+        SingleNode<T> currNode = this.head;
+        while (currNode != null){
+            if (currNode.getValue() == searchValue){
+                return true;
+            }
+            currNode = currNode.getNextNode();
+        }
+        return false;
     }
 
     public void printList() {
