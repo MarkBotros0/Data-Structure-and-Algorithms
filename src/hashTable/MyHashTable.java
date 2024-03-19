@@ -14,6 +14,8 @@ public class MyHashTable<K, V> {
     public int getSize() {
         return size;
     }
+
+    // O(1) - O(n)
     public void put(K key, V value) {
         if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
@@ -36,6 +38,7 @@ public class MyHashTable<K, V> {
         size++;
     }
 
+    // O(1) - O(n)
     public V get(K key) {
         if (key == null)
             throw new IllegalArgumentException("Key cannot be null");
@@ -52,6 +55,7 @@ public class MyHashTable<K, V> {
         return null;
     }
 
+    // O(1) - O(n)
     public void remove(K key) {
         if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
@@ -70,6 +74,7 @@ public class MyHashTable<K, V> {
         }
     }
 
+    // O(1)
     private int getIndex(K key) {
         return Math.abs(key.hashCode() % table.length);
     }
