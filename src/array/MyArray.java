@@ -1,17 +1,19 @@
 package array;
 
-import hashTable.Entry;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class MyArray<T> {
+
     private int length;
     private final HashMap<Integer, T> data;
 
     public MyArray() {
         this.data = new HashMap<>();
         this.length = 0;
+    }
+    public int getLength() {
+        return length;
     }
 
     // O(1)
@@ -29,9 +31,11 @@ public class MyArray<T> {
     }
 
     // O(1)
-    public void pop() {
+    public T pop() {
+        T holdingPointer = this.data.get(this.length - 1);
         this.data.remove(this.length - 1);
         this.length--;
+        return holdingPointer;
     }
 
     // O(n)
