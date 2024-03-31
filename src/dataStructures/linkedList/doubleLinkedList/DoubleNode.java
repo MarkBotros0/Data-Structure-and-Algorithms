@@ -1,4 +1,4 @@
-package linkedList.doubleLinkedList;
+package dataStructures.linkedList.doubleLinkedList;
 
 public class DoubleNode<T> {
     private final T value;

@@ -1,12 +1,12 @@
-package stack.linkedListStack;
+package dataStructures.stack.linkedListStack;
 
-import linkedList.single.SingleNode;
-import stack.Stack;
+import dataStructures.linkedList.single.SingleNode;
+import dataStructures.stack.Stack;
 
 import java.util.ArrayList;
 
 // LIFO -> Last in First out
-public class MyLLStack<T> implements Stack {
+public class MyLLStack<T> implements Stack<T> {
     private SingleNode<T> top;
     private SingleNode<T> bottom;
     private int length;
@@ -22,6 +22,7 @@ public class MyLLStack<T> implements Stack {
     }
 
     // O(1)
+    @Override
     public void push(T input) {
         SingleNode<T> newNode = new SingleNode<>(input);
         if (this.bottom == null) {
@@ -74,20 +75,20 @@ public class MyLLStack<T> implements Stack {
         stack.push("Name");
         stack.push("Mark");
 
-//        System.out.println(stack.peek());
+//        System.out.println(dataStructures.stack.peek());
 
         stack.pop();
         stack.pop();
         stack.pop();
         stack.pop();
-//        stack.pop();
+//        dataStructures.stack.pop();
 
-//        System.out.println(stack.isEmpty());
+//        System.out.println(dataStructures.stack.isEmpty());
 
         System.out.println(stack.pop());
 
         System.out.println(stack.isEmpty());
-//        stack.printStack();
+//        dataStructures.stack.printStack();
     }
 
 }

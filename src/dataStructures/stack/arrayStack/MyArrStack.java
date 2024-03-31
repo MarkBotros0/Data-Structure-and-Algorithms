@@ -1,11 +1,11 @@
-package stack.arrayStack;
+package dataStructures.stack.arrayStack;
 
-import array.MyArray;
-import stack.Stack;
+import dataStructures.array.MyArray;
+import dataStructures.stack.Stack;
 
 // LIFO -> Last in First out
-public class MyArrStack<T> implements Stack {
-    private MyArray<T> arr;
+public class MyArrStack<T> implements Stack<T> {
+    private final MyArray<T> arr;
 
     public MyArrStack() {
         this.arr = new MyArray<>();
@@ -30,6 +30,7 @@ public class MyArrStack<T> implements Stack {
     }
 
     // O(1)
+    @Override
     public void push(T input) {
         arr.push(input);
     }
@@ -54,13 +55,13 @@ public class MyArrStack<T> implements Stack {
         stack.printList();
         stack.pop();
         stack.pop();
-//        stack.pop();
+//        dataStructures.stack.pop();
 
-//        System.out.println(stack.isEmpty());
+//        System.out.println(dataStructures.stack.isEmpty());
 
         System.out.println(stack.pop());
 
         System.out.println(stack.isEmpty());
-//        stack.printStack();
+//        dataStructures.stack.printStack();
     }
 }

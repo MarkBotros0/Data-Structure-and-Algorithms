@@ -1,4 +1,4 @@
-package array;
+package dataStructures.array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -80,7 +80,7 @@ public class MyArray<T> {
         StringBuilder array = new StringBuilder();
         array.append("length: ").append(this.length).append(", ").append("[");
         if (this.length > 0) {
-            data.forEach((key, value) -> array.append(key).append(":").append(value).append(","));
+            data.forEach((key, value) -> array.append(value).append(","));
             array.deleteCharAt(array.length() - 1);
         }
         array.append("]");

@@ -1,6 +1,6 @@
-package queue.linkedListQueue;
+package dataStructures.queue.linkedListQueue;
 
-import linkedList.single.SingleNode;
+import dataStructures.linkedList.single.SingleNode;
 
 import java.util.ArrayList;
 

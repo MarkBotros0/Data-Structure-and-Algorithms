@@ -1,4 +1,4 @@
-package linkedList.single;
+package dataStructures.linkedList.single;
 
 public class SingleNode<T> {
     private T value;

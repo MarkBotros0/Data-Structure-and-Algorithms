@@ -1,4 +1,4 @@
-package binarySearchTree;
+package dataStructures.binarySearchTree;
 
 public class BSTNode<T extends Comparable<T>> implements Comparable<BSTNode<T>> {
     private T value;

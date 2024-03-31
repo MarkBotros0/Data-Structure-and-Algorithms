@@ -1,7 +1,13 @@
-package binarySearchTree;
+package dataStructures.binarySearchTree;
+
+import dataStructures.array.MyArray;
+import dataStructures.queue.linkedListQueue.MyLLQueue;
+
+import javax.swing.*;
 
 public class MyBinarySearchTree<T extends Comparable<T>> {
     private BSTNode<T> root;
+
     public BSTNode<T> getRoot() {
         return root;
     }
@@ -53,6 +59,76 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
             }
         }
         return false;
+    }
+
+    public MyArray<T> breadthFirstSearch() {
+        BSTNode<T> currNode = this.root;
+        MyArray<T> list = new MyArray<>();
+        MyLLQueue<BSTNode<T>> currLevelQueue = new MyLLQueue<>();
+        currLevelQueue.enqueue(currNode);
+        while (currLevelQueue.getLength() > 0) {
+            currNode = currLevelQueue.dequeue();
+            list.push(currNode.getValue());
+            if (currNode.getLeft() != null) {
+                currLevelQueue.enqueue(currNode.getLeft());
+            }
+            if (currNode.getRight() != null) {
+                currLevelQueue.enqueue(currNode.getRight());
+            }
+        }
+        return list;
+    }
+
+    public MyArray<T> breadthFirstSearchRecursive(MyLLQueue<BSTNode<T>> currLevelQueue, MyArray<T> list) {
+        if (currLevelQueue.getLength() == 0) {
+            return list;
+        }
+        BSTNode<T> currNode = currLevelQueue.dequeue();
+        list.push(currNode.getValue());
+
+        if (currNode.getLeft() != null) {
+            currLevelQueue.enqueue(currNode.getLeft());
+        }
+
+        if (currNode.getRight() != null) {
+            currLevelQueue.enqueue(currNode.getRight());
+        }
+        return this.breadthFirstSearchRecursive(currLevelQueue, list);
+    }
+
+//  DFS uses Stack DS (LIFO)
+    public MyArray<T> depthFirstSearchInOrder(BSTNode<T> currNode, MyArray<T> list) {
+        if (currNode.getLeft() != null) {
+            this.depthFirstSearchInOrder(currNode.getLeft(), list);
+        }
+        list.push(currNode.getValue());
+        if (currNode.getRight() != null) {
+            this.depthFirstSearchInOrder(currNode.getRight(), list);
+        }
+        return list;
+    }
+
+    public MyArray<T> depthFirstSearchPreOrder(BSTNode<T> currNode, MyArray<T> list) {
+        list.push(currNode.getValue());
+        System.out.println(currNode.getValue());
+        if (currNode.getLeft() != null) {
+            this.depthFirstSearchPreOrder(currNode.getLeft(), list);
+        }
+        if (currNode.getRight() != null) {
+            this.depthFirstSearchPreOrder(currNode.getRight(), list);
+        }
+        return list;
+    }
+
+    public MyArray<T> depthFirstSearchPostOrder(BSTNode<T> currNode, MyArray<T> list) {
+        if (currNode.getLeft() != null) {
+            this.depthFirstSearchPostOrder(currNode.getLeft(), list);
+        }
+        if (currNode.getRight() != null) {
+            this.depthFirstSearchPostOrder(currNode.getRight(), list);
+        }
+        list.push(currNode.getValue());
+        return list;
     }
 
     // O(log(n))
@@ -126,6 +202,9 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
     }
 
     public static void testBST() {
+        //     9
+        //  4     20
+        //1  6  15  170
         MyBinarySearchTree<Integer> tree = new MyBinarySearchTree<>();
         tree.insert(9);
         tree.insert(4);
@@ -135,22 +214,14 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
         tree.insert(15);
         tree.insert(1);
 
-        System.out.println(tree.getRoot().getValue());
-        System.out.println(tree.getRoot().getLeft().getValue());
-        System.out.println(tree.getRoot().getLeft().getLeft().getValue());
-        System.out.println(tree.getRoot().getLeft().getRight().getValue());
-        System.out.println(tree.getRoot().getRight().getValue());
-        System.out.println(tree.getRoot().getRight().getRight().getValue());
-        System.out.println(tree.getRoot().getRight().getLeft().getValue());
+//        tree.breadthFirstSearch().printList();
 
-        System.out.println(tree.lookUp(6));
-        System.out.println(tree.lookUp(1));
-        System.out.println(tree.lookUp(9));
-        System.out.println(tree.lookUp(170));
-        System.out.println(tree.lookUp(15));
-        System.out.println(tree.lookUp(3));
-//     9
-//  4     20
-//1  6  15  170
+//        MyLLQueue<BSTNode<Integer>> currLevelQueue = new MyLLQueue<>();
+//        currLevelQueue.enqueue(tree.getRoot());
+//        System.out.println(currLevelQueue.getLength());
+//        tree.breadthFirstSearchRecursive(currLevelQueue, new MyArray<Integer>()).printList();
+//        tree.depthFirstSearchInOrder(tree.getRoot(), new MyArray<Integer>()).printList();
+//        tree.depthFirstSearchPreOrder(tree.getRoot(), new MyArray<Integer>()).printList();
+        tree.depthFirstSearchPostOrder(tree.getRoot(), new MyArray<Integer>()).printList();
     }
 }
