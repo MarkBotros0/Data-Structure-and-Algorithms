@@ -2,7 +2,9 @@ package leetcode;
 
 public class Main {
     public static void main(String[] args) {
-        RemoveDuplicatesFromSortedArrayII test = new RemoveDuplicatesFromSortedArrayII();
+//        RemoveDuplicatesFromSortedArrayII test = new RemoveDuplicatesFromSortedArrayII();
+//        test.test();
+        RotateArray test = new RotateArray();
         test.test();
     }
 }
