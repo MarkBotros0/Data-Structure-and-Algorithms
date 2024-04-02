@@ -1,7 +1,5 @@
 package algorithms;
 
-import algorithms.sorting.MergeSorting;
-
 public class Main {
 
     public static void main(String[] args) {
