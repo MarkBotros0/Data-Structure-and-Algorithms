@@ -16,6 +16,6 @@ public class MajorityElement {
                 map.put(nums[i], 1);
             }
         }
-        return 1;
+        return 0;
     }
 }
