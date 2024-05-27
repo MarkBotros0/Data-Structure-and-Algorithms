@@ -66,6 +66,7 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
         MyArray<T> list = new MyArray<>();
         MyLLQueue<BSTNode<T>> currLevelQueue = new MyLLQueue<>();
         currLevelQueue.enqueue(currNode);
+
         while (currLevelQueue.getLength() > 0) {
             currNode = currLevelQueue.dequeue();
             list.push(currNode.getValue());

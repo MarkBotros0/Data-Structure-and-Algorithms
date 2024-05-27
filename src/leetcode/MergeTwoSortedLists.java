@@ -1,26 +1,23 @@
 package leetcode;
 
-import dataStructures.graph.Node;
-
+//21
 public class MergeTwoSortedLists implements TestSolution {
-
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode currNode1 = list1;
-        ListNode currNode2 = list2;
+        ListNode head = new ListNode();
+        ListNode curr = head;
 
-        ListNode newNode = null;
-        ListNode currNode = null;
-
-        while (currNode1.next != null || currNode2.next != null) {
-            if (currNode1.next.val >= currNode2.next.val) {
-                newNode.val = currNode1.val;
+        while (list1.next != null && list2.next != null) {
+            if (list1.val >= list2.val) {
+                curr.next = list1;
+                list1 = list1.next;
             } else {
-                newNode.val = currNode2.val;
+                curr.next = list2;
+                list2 = list2.next;
             }
+            curr = curr.next;
         }
-
-        return newNode;
-
+        curr.next = list1 != null ? list1 : list2;
+        return head.next;
     }
 
     @Override

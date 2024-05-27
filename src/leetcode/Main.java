@@ -3,7 +3,9 @@ package leetcode;
 public class Main {
     public static void main(String[] args) {
 
-        TestSolution test = new MaximumDepthOfBinaryTree();
+        TestSolution test = new LinkedListCycle();
         test.test();
     }
 }
+
+
