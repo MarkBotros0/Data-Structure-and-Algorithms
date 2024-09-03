@@ -2,7 +2,7 @@ package leetcode;
 
 public class Main {
     public static void main(String[] args) {
-        TestSolution test = new _3Sum();
+        TestSolution test = new GasStation();
         test.test();
     }
 }
