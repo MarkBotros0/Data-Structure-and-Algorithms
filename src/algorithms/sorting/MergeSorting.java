@@ -2,7 +2,7 @@ package algorithms.sorting;
 
 import java.util.ArrayList;
 
-public class QuickSorting {
+public class MergeSorting {
 
     // O(nlog(n))
     public ArrayList<Integer> sort(ArrayList<Integer> arr) {
@@ -18,7 +18,7 @@ public class QuickSorting {
     public ArrayList<Integer> merge(ArrayList<Integer> left, ArrayList<Integer> right) {
         ArrayList<Integer> arr = new ArrayList<>();
         int leftIndex = 0;
-        int rightIndex = 0;
+        int rightIndex = 0  ;
         while (leftIndex < left.size() && rightIndex < right.size()) {
             if (left.get(leftIndex) < right.get(rightIndex)) {
                 arr.add(left.get(leftIndex));
@@ -48,7 +48,7 @@ public class QuickSorting {
         arr.add(4);
         arr.add(0);
         System.out.println(arr);
-        QuickSorting sorter = new QuickSorting();
+        MergeSorting sorter = new MergeSorting();
         System.out.println(sorter.sort(arr));
     }
 

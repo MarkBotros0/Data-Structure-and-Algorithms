@@ -24,6 +24,7 @@ public class LongestCommonPrefix implements TestSolution{
         return longestPrefixBuilder.toString();
     }
 
+    @Override
     public void test() {
         String[] strs = {"flower", "flow", "flight"};
         System.out.println(longestCommonPrefix(strs));
