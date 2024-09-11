@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.HashMap;
 
-public class RemoveDuplicateFromSortedArray {
+public class _26_RemoveDuplicateFromSortedArray {
     public int removeDuplicates1(int[] nums) {
         int counter = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
