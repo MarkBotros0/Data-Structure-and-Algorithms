@@ -2,7 +2,6 @@ package leetcode;
 
 import java.util.HashMap;
 
-// 1
 public class _1_TwoSum implements TestSolution {
 
     public int[] twoSum(int[] nums, int target) {

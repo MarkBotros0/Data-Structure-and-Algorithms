@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class RemoveDuplicatesFromSortedArrayII {
+public class _80_RemoveDuplicatesFromSortedArrayII implements TestSolution{
     public int removeDuplicates(int[] nums) {
         int counter = 1;
         for (int i = 1; i < nums.length; i++) {
@@ -15,8 +15,9 @@ public class RemoveDuplicatesFromSortedArrayII {
         return counter;
     }
 
+    @Override
     public void test() {
-        this.removeDuplicates(new int[]{1, 1, 1, 2, 2, 3});
+        System.out.println(this.removeDuplicates(new int[]{1, 1, 1, 2, 2, 3}));
     }
 
 }

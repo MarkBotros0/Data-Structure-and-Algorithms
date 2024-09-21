@@ -1,6 +1,5 @@
 package leetcode;
 
-//66
 public class _66_PlusOne implements TestSolution {
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {

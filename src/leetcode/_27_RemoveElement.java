@@ -1,6 +1,6 @@
 package leetcode;
 
-public class _27_RemoveElement {
+public class _27_RemoveElement implements TestSolution {
     public int removeElement(int[] nums, int val) {
         int counter = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -10,5 +10,10 @@ public class _27_RemoveElement {
             }
         }
         return counter;
+    }
+
+    @Override
+    public void test() {
+        System.out.println(removeElement(new int[]{3, 2, 2, 3}, 3));
     }
 }

@@ -1,6 +1,5 @@
 package leetcode;
 
-//21
 public class _21_MergeTwoSortedLists implements TestSolution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode head = new ListNode();

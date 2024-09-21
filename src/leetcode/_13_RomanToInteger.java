@@ -1,6 +1,6 @@
 package leetcode;
 
-public class RomanToInteger {
+public class _13_RomanToInteger implements TestSolution {
 
     public int romanToInt(String s) {
         char[] chars = s.toCharArray();
@@ -39,5 +39,10 @@ public class RomanToInteger {
             }
         }
         return result;
+    }
+
+    @Override
+    public void test() {
+        System.out.println(this.romanToInt("LVIII"));
     }
 }

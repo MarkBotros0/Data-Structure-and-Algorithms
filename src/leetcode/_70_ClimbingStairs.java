@@ -3,7 +3,6 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-//70
 public class _70_ClimbingStairs implements TestSolution {
     public int climbStairs(int n) {
         Map<Integer, Integer> map = new HashMap<>();

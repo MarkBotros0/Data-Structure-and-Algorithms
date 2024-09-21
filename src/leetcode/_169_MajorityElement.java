@@ -2,7 +2,6 @@ package leetcode;
 
 import java.util.HashMap;
 
-//169
 public class _169_MajorityElement {
     public int majorityElement(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();

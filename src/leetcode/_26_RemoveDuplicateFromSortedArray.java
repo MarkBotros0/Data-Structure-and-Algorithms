@@ -2,7 +2,8 @@ package leetcode;
 
 import java.util.HashMap;
 
-public class RemoveDuplicateFromSortedArray {
+public class _26_RemoveDuplicateFromSortedArray implements TestSolution{
+
     public int removeDuplicates1(int[] nums) {
         int counter = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -17,6 +18,7 @@ public class RemoveDuplicateFromSortedArray {
         }
         return counter;
     }
+
     public int removeDuplicates2(int[] nums) {
         int counter = 1;
         for (int i = 0; i < nums.length; i++) {
@@ -26,5 +28,10 @@ public class RemoveDuplicateFromSortedArray {
             }
         }
         return counter;
+    }
+
+    @Override
+    public void test() {
+        System.out.println(removeDuplicates1(new int[]{1,1,2,2,3,3,4}));
     }
 }

@@ -21,6 +21,28 @@ public class _228_SummaryRanges implements TestSolution {
         return result;
     }
 
+    public List<String> summaryRanges1(int[] nums) {
+        List<String> summeryList = new ArrayList<>();
+        if (nums.length == 0) {
+            return summeryList;
+        }
+        int min = nums[0], max = nums[0];
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i + 1] == max + 1) {
+                max = nums[i + 1];
+            } else {
+                if (max == min) {
+                    summeryList.add(Integer.toString(min));
+                } else {
+                    summeryList.add(Integer.toString(min) + "->" + Integer.toString(max));
+                }
+                min = nums[i + 1];
+                max = nums[i + 1];
+            }
+        }
+        return summeryList;
+    }
+
     private String printRange(int rangeStart, int rangeEnd) {
         if (rangeEnd == rangeStart) {
             return Integer.toString(rangeStart);

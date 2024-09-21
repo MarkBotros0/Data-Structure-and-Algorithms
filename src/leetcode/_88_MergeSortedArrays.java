@@ -1,6 +1,8 @@
 package leetcode;
 
-public class _88_MergeSortedArrays {
+import java.util.Arrays;
+
+public class _88_MergeSortedArrays implements TestSolution{
     public int[] merge(int[] nums1, int m, int[] nums2, int n) {
         int[] nums = new int[m];
         int counter1 = m - 1;
@@ -18,7 +20,13 @@ public class _88_MergeSortedArrays {
         return nums1;
     }
 
-    public void solve() {
-        this.merge(new int[]{1, 2, 3, 0, 0, 0},3, new int[]{2, 5, 6},3);
+    @Override
+    public void test() {
+        System.out.println(
+                Arrays.toString(
+                        this.merge(new int[]{1, 2, 3, 0, 0, 0},3, new int[]{2, 5, 6},3
+                        )
+                )
+        );
     }
 }

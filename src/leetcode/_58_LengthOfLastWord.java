@@ -1,5 +1,5 @@
 package leetcode;
-public class _58_LengthOfLastWord {
+public class _58_LengthOfLastWord implements TestSolution{
 
     public int lengthOfLastWord(String s) {
         String[] strArr = s.split(" ");
@@ -7,4 +7,8 @@ public class _58_LengthOfLastWord {
         return chars.length;
     }
 
+    @Override
+    public void test() {
+        System.out.println(lengthOfLastWord("Hello World"));
+    }
 }

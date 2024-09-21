@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class _134_GasStation implements TestSolution {
 
     public int canCompleteCircuit(int[] gas, int[] cost) {

@@ -3,7 +3,6 @@ package leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-//128
 public class _128_LongestConsecutiveSequence implements TestSolution {
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) return 0;

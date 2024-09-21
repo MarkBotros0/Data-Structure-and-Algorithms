@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class _151_ReverseWordsInAString implements TestSolution {
     public String reverseWords(String s) {
         String[] newStringArray = s.trim().split(" ");

@@ -1,6 +1,5 @@
 package leetcode;
 
-//125
 public class _125_ValidPalindrome implements TestSolution {
 
     public boolean isPalindrome(String s) {
