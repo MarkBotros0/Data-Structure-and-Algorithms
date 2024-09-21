@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class _NA_135_Candy implements TestSolution {
 
     public int candy(int[] ratings) {
