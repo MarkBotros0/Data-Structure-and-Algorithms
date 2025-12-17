@@ -3,9 +3,10 @@ package leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-public class _128_LongestConsecutiveSequence implements TestSolution {
-    public int longestConsecutive(int[] nums) {
-        if (nums.length == 0) return 0;
+public class _128_LongestConsecutiveSequence {
+    public static int longestConsecutive(int[] nums) {
+        if (nums.length == 0)
+            return 0;
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
             set.add(num);
@@ -26,9 +27,8 @@ public class _128_LongestConsecutiveSequence implements TestSolution {
         return longestStreak;
     }
 
-    @Override
-    public void test() {
-        int[] ints = {9,1,4,7,3,-1,0,5,8,-1,6};
+    public static void main(String[] args) {
+        int[] ints = { 9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6 };
         System.out.println(longestConsecutive(ints));
     }
 }

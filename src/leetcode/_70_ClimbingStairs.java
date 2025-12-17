@@ -3,13 +3,13 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class _70_ClimbingStairs implements TestSolution {
-    public int climbStairs(int n) {
+public class _70_ClimbingStairs {
+    public static int climbStairs(int n) {
         Map<Integer, Integer> map = new HashMap<>();
         return helper(n, map);
     }
 
-    public int helper(int n, Map<Integer, Integer> map) {
+    public static int helper(int n, Map<Integer, Integer> map) {
         if (n == 0 || n == 1) {
             return 1;
         }
@@ -19,8 +19,7 @@ public class _70_ClimbingStairs implements TestSolution {
         return map.get(n);
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(climbStairs(13));
     }
 }

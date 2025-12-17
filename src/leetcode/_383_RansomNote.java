@@ -2,9 +2,9 @@ package leetcode;
 
 import java.util.HashMap;
 
-public class _383_RansomNote implements TestSolution {
+public class _383_RansomNote {
 
-    public boolean canConstruct(String ransomNote, String magazine) {
+    public static boolean canConstruct(String ransomNote, String magazine) {
         HashMap<Character, Integer> magazineMap = new HashMap<>();
         for (int i = 0; i < magazine.length(); i++) {
             char c = magazine.charAt(i);
@@ -25,12 +25,12 @@ public class _383_RansomNote implements TestSolution {
         }
         return true;
     }
-    public boolean canConstruct1(String ransomNote, String magazine) {
+
+    public static boolean canConstruct1(String ransomNote, String magazine) {
         return true;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(canConstruct("aa", "aab"));
     }
 }

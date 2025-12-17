@@ -3,8 +3,8 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _202_HappyNumber implements TestSolution {
-    public boolean isHappy(int n) {
+public class _202_HappyNumber {
+    public static boolean isHappy(int n) {
         int result = n;
         int i = 0;
         while (result != 1) {
@@ -18,7 +18,7 @@ public class _202_HappyNumber implements TestSolution {
         return true;
     }
 
-    public List<Integer> getDigits(int n) {
+    public static List<Integer> getDigits(int n) {
         List<Integer> digits = new ArrayList<>();
         while (n > 0) {
             digits.add(n % 10);
@@ -27,7 +27,7 @@ public class _202_HappyNumber implements TestSolution {
         return digits;
     }
 
-    public int getSumSquared(List<Integer> digits) {
+    public static int getSumSquared(List<Integer> digits) {
         int result = 0;
         for (int i : digits) {
             result += (i * i);
@@ -35,8 +35,7 @@ public class _202_HappyNumber implements TestSolution {
         return result;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(isHappy(19));
     }
 }

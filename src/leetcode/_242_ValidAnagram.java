@@ -11,6 +11,10 @@ public class _242_ValidAnagram {
         Arrays.sort(sArr);
         Arrays.sort(tArr);
 
-       return Arrays.equals(sArr,tArr) ? true : false;
+        return Arrays.equals(sArr, tArr) ? true : false;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isAnagram("anagram", "nagaram"));
     }
 }

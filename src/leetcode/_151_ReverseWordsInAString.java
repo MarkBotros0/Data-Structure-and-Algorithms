@@ -1,7 +1,7 @@
 package leetcode;
 
-public class _151_ReverseWordsInAString implements TestSolution {
-    public String reverseWords(String s) {
+public class _151_ReverseWordsInAString {
+    public static String reverseWords(String s) {
         String[] newStringArray = s.trim().split(" ");
         StringBuilder string = new StringBuilder();
         for (int i = 0; i < newStringArray.length; i++) {
@@ -15,8 +15,7 @@ public class _151_ReverseWordsInAString implements TestSolution {
         return string.toString();
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(reverseWords("a good   example"));
     }
 }

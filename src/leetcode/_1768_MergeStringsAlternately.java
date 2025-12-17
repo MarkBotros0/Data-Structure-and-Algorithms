@@ -1,9 +1,9 @@
 package leetcode;
 
 //  1768
-public class _1768_MergeStringsAlternately implements TestSolution {
+public class _1768_MergeStringsAlternately {
 
-    public String mergeAlternately(String word1, String word2) {
+    public static String mergeAlternately(String word1, String word2) {
         String biggerWord = word1.length() > word2.length() ? word1 : word2;
         int smallerLength = Math.min(word1.length(), word2.length());
         StringBuilder sb = new StringBuilder();
@@ -16,9 +16,7 @@ public class _1768_MergeStringsAlternately implements TestSolution {
         return sb.toString();
     }
 
-    @Override
-    public void test() {
-        _1768_MergeStringsAlternately obj = new _1768_MergeStringsAlternately();
-        System.out.println(obj.mergeAlternately("Mark", "Essam"));
+    public static void main(String[] args) {
+        System.out.println(mergeAlternately("Mark", "Essam"));
     }
 }

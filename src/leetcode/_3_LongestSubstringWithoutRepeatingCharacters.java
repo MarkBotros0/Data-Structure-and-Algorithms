@@ -2,8 +2,8 @@ package leetcode;
 
 import java.util.HashSet;
 
-public class _3_LongestSubstringWithoutRepeatingCharacters implements TestSolution {
-    public int lengthOfLongestSubstring(String s) {
+public class _3_LongestSubstringWithoutRepeatingCharacters {
+    public static int lengthOfLongestSubstring(String s) {
         int maxLen = 0;
         for (int i = 0; i < s.length(); i++) {
             HashSet<Character> charSet = new HashSet<>();
@@ -17,8 +17,7 @@ public class _3_LongestSubstringWithoutRepeatingCharacters implements TestSoluti
         return maxLen;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
 }

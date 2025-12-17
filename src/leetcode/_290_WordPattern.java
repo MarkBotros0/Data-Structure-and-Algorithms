@@ -2,10 +2,11 @@ package leetcode;
 
 import java.util.HashMap;
 
-public class _290_WordPattern implements TestSolution {
-    public boolean wordPattern(String pattern, String s) {
+public class _290_WordPattern {
+    public static boolean wordPattern(String pattern, String s) {
         String[] wordsArr = s.split(" ");
-        if (pattern.length() != wordsArr.length) return false;
+        if (pattern.length() != wordsArr.length)
+            return false;
 
         HashMap<Character, String> map = new HashMap<>();
         for (int i = 0; i < pattern.length(); i++) {
@@ -14,15 +15,15 @@ public class _290_WordPattern implements TestSolution {
                     return false;
                 }
             } else {
-                if (map.containsValue(wordsArr[i])) return false;
+                if (map.containsValue(wordsArr[i]))
+                    return false;
                 map.put(pattern.charAt(i), wordsArr[i]);
             }
         }
         return true;
     }
 
-    @Override
-    public void test() {
-        System.out.println(wordPattern("abba","dog cat cat dog"));
+    public static void main(String[] args) {
+        System.out.println(wordPattern("abba", "dog cat cat dog"));
     }
 }

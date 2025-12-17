@@ -2,8 +2,8 @@ package leetcode;
 
 import java.util.*;
 
-public class _228_SummaryRanges implements TestSolution {
-    public List<String> summaryRanges(int[] nums) {
+public class _228_SummaryRanges {
+    public static List<String> summaryRanges(int[] nums) {
         int startingIndex = 0;
         int closingIndex = 0;
         List<String> result = new ArrayList<>();
@@ -21,7 +21,7 @@ public class _228_SummaryRanges implements TestSolution {
         return result;
     }
 
-    public List<String> summaryRanges1(int[] nums) {
+    public static List<String> summaryRanges1(int[] nums) {
         List<String> summeryList = new ArrayList<>();
         if (nums.length == 0) {
             return summeryList;
@@ -43,7 +43,7 @@ public class _228_SummaryRanges implements TestSolution {
         return summeryList;
     }
 
-    private String printRange(int rangeStart, int rangeEnd) {
+    private static String printRange(int rangeStart, int rangeEnd) {
         if (rangeEnd == rangeStart) {
             return Integer.toString(rangeStart);
         } else {
@@ -51,9 +51,8 @@ public class _228_SummaryRanges implements TestSolution {
         }
     }
 
-    @Override
-    public void test() {
-        int[] list = {0, 1, 2, 4, 5, 7};
+    public static void main(String[] args) {
+        int[] list = { 0, 1, 2, 4, 5, 7 };
         System.out.println(summaryRanges(list));
     }
 }

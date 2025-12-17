@@ -3,8 +3,8 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _6_ZigzagConversion implements TestSolution {
-    public String convert(String s, int numRows) {
+public class _6_ZigzagConversion {
+    public static String convert(String s, int numRows) {
         if (numRows == 1) {
             return s;
         }
@@ -17,7 +17,7 @@ public class _6_ZigzagConversion implements TestSolution {
         for (int i = 0; i < s.length(); i++) {
             sbArr.get(counter).append(s.charAt(i));
             counter += variance;
-            if (counter == numRows-1) {
+            if (counter == numRows - 1) {
                 variance = -1;
             } else if (variance == -1 && counter == 0) {
                 variance = 1;
@@ -30,9 +30,8 @@ public class _6_ZigzagConversion implements TestSolution {
         return finalString.toString();
     }
 
-    @Override
-    public void test() {
-        System.out.println(convert("PAYPALISHIRING",4));
+    public static void main(String[] args) {
+        System.out.println(convert("PAYPALISHIRING", 4));
 
     }
 }

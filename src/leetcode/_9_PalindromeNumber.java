@@ -1,8 +1,9 @@
 package leetcode;
 
-public class _9_PalindromeNumber implements TestSolution {
-    public boolean isPalindrome(int x) {
-        if (x < 0) return false;
+public class _9_PalindromeNumber {
+    public static boolean isPalindrome(int x) {
+        if (x < 0)
+            return false;
         StringBuilder builder = new StringBuilder(Integer.toString(x));
 
         String original = builder.toString();
@@ -11,8 +12,9 @@ public class _9_PalindromeNumber implements TestSolution {
         return original.equals(reversed);
     }
 
-    public boolean isPalindrome1(int x) {
-        if (x < 0) return false;
+    public static boolean isPalindrome1(int x) {
+        if (x < 0)
+            return false;
 
         int original = x;
         int reversed = 0;
@@ -29,8 +31,8 @@ public class _9_PalindromeNumber implements TestSolution {
         return reversed == original;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
+        System.out.println(isPalindrome(1234567899));
         System.out.println(isPalindrome1(1234567899));
     }
 }

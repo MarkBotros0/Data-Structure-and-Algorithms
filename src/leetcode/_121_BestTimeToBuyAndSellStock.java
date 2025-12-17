@@ -1,7 +1,7 @@
 package leetcode;
 
-public class _121_BestTimeToBuyAndSellStock implements TestSolution{
-    public int maxProfit(int[] prices) {
+public class _121_BestTimeToBuyAndSellStock {
+    public static int maxProfit(int[] prices) {
         int min = prices[0];
         int diff = 0;
         for (int i = 1; i < prices.length; i++) {
@@ -15,8 +15,8 @@ public class _121_BestTimeToBuyAndSellStock implements TestSolution{
         return diff;
     }
 
-    @Override
-    public void test() {
-
+    public static void main(String[] args) {
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println(maxProfit(prices));
     }
 }

@@ -1,11 +1,8 @@
 package leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
+public class DeloitteInterview {
 
-public class DeloitteInterview implements TestSolution {
-
-        public int solution(String S) {
+        public static int solution(String S) {
             // Split the string into sentences using ., !, and ? as delimiters
             String[] sentences = S.split("[.?!]");
             int maxWords = 0;
@@ -29,7 +26,7 @@ public class DeloitteInterview implements TestSolution {
         }
 
 
-        public int solution2(String S) {
+        public static int solution2(String S) {
             String[] sentences = S.split("[.?!]");
             int maxWords = 0;
 
@@ -49,8 +46,7 @@ public class DeloitteInterview implements TestSolution {
             return maxWords;
         }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(solution("We test coders. Give us a try?"));
     }
 }

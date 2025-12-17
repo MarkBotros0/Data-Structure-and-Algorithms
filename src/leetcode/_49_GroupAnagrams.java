@@ -1,8 +1,9 @@
 package leetcode;
+
 import java.util.*;
 
-public class _49_GroupAnagrams implements TestSolution {
-    public List<List<String>> groupAnagrams(String[] strs) {
+public class _49_GroupAnagrams {
+    public static List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List<String>> map = new HashMap<>();
 
         for (String s : strs) {
@@ -22,9 +23,8 @@ public class _49_GroupAnagrams implements TestSolution {
         return new ArrayList<>(map.values());
     }
 
-    @Override
-    public void test() {
-        String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    public static void main(String[] args) {
+        String[] words = { "eat", "tea", "tan", "ate", "nat", "bat" };
         System.out.println(groupAnagrams(words));
     }
 }

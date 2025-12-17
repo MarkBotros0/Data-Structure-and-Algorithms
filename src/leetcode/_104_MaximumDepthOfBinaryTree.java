@@ -1,16 +1,16 @@
 package leetcode;
 
-public class _104_MaximumDepthOfBinaryTree implements TestSolution {
-    public int maxDepth(TreeNode root) {
+public class _104_MaximumDepthOfBinaryTree {
+    public static int maxDepth(TreeNode root) {
         if (root == null) return 0;
         return depth(root);
     }
 
-    public int maxDepth1(TreeNode root) {
+    public static int maxDepth1(TreeNode root) {
         return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
-    public int depth(TreeNode node) {
+    public static int depth(TreeNode node) {
         if (node.left == null && node.right == null) return 1;
 
         int left = 0, right = 0;
@@ -19,8 +19,7 @@ public class _104_MaximumDepthOfBinaryTree implements TestSolution {
         return Math.max(left, right) + 1;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         TreeNode tree = new TreeNode(3);
         tree.left = new TreeNode(9);
         tree.right = new TreeNode(20);

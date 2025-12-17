@@ -2,8 +2,8 @@ package leetcode;
 
 import java.util.HashMap;
 
-public class _219_ContainsDuplicateII implements TestSolution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+public class _219_ContainsDuplicateII {
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
@@ -16,9 +16,8 @@ public class _219_ContainsDuplicateII implements TestSolution {
         return false;
     }
 
-    @Override
-    public void test() {
-        int[] ints = {1, 0, 1, 1};
+    public static void main(String[] args) {
+        int[] ints = { 1, 0, 1, 1 };
         System.out.println(containsNearbyDuplicate(ints, 1));
     }
 }

@@ -2,8 +2,8 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class _238_Product_Of_Array_Except_Self implements TestSolution {
-    public int[] productExceptSelf1(int[] nums) {
+public class _238_Product_Of_Array_Except_Self {
+    public static int[] productExceptSelf1(int[] nums) {
         int numOfZeros = (int) Arrays.stream(nums).filter(num -> num == 0).count();
         if (numOfZeros > 1) {
             return new int[nums.length];
@@ -29,7 +29,7 @@ public class _238_Product_Of_Array_Except_Self implements TestSolution {
         return answer;
     }
 
-    public int[] productExceptSelf2(int[] nums) {
+    public static int[] productExceptSelf2(int[] nums) {
         int numOfZeros = (int) Arrays.stream(nums).filter(num -> num == 0).count();
         if (numOfZeros > 1) {
             return new int[nums.length];
@@ -48,7 +48,7 @@ public class _238_Product_Of_Array_Except_Self implements TestSolution {
         return answer;
     }
 
-    public int[] productExceptSelf3(int[] nums) {
+    public static int[] productExceptSelf3(int[] nums) {
         int n = nums.length;
         int[] pre = new int[nums.length];
         pre[0] = 1;
@@ -67,7 +67,7 @@ public class _238_Product_Of_Array_Except_Self implements TestSolution {
         return ans;
     }
 
-    public int[] productExceptSelf5(int[] nums) {
+    public static int[] productExceptSelf5(int[] nums) {
         int n = nums.length;
         int[] pre = new int[nums.length];
         pre[0] = 1;
@@ -82,26 +82,26 @@ public class _238_Product_Of_Array_Except_Self implements TestSolution {
         }
         return ans;
     }
-    public int[] productExceptSelf4(int[] nums) {
+
+    public static int[] productExceptSelf4(int[] nums) {
         int n = nums.length;
         int ans[] = new int[n];
         Arrays.fill(ans, 1);
         int curr = 1;
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             ans[i] *= curr;
             curr *= nums[i];
         }
         curr = 1;
-        for(int i = n - 1; i >= 0; i--) {
+        for (int i = n - 1; i >= 0; i--) {
             ans[i] *= curr;
             curr *= nums[i];
         }
         return ans;
     }
 
-    @Override
-    public void test() {
-        int[] nums = {-1, 1, 0, -3, 3};
+    public static void main(String[] args) {
+        int[] nums = { -1, 1, 0, -3, 3 };
         System.out.println(Arrays.toString(productExceptSelf5(nums)));
     }
 }

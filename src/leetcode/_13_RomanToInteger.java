@@ -1,8 +1,8 @@
 package leetcode;
 
-public class _13_RomanToInteger implements TestSolution {
+public class _13_RomanToInteger {
 
-    public int romanToInt(String s) {
+    public static int romanToInt(String s) {
         char[] chars = s.toCharArray();
         int result = 0;
         for (int i = 0; i < chars.length; i++) {
@@ -41,8 +41,7 @@ public class _13_RomanToInteger implements TestSolution {
         return result;
     }
 
-    @Override
-    public void test() {
-        System.out.println(this.romanToInt("LVIII"));
+    public static void main(String[] args) {
+        System.out.println(romanToInt("LVIII"));
     }
 }

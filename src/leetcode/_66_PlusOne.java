@@ -1,7 +1,9 @@
 package leetcode;
 
-public class _66_PlusOne implements TestSolution {
-    public int[] plusOne(int[] digits) {
+import java.util.Arrays;
+
+public class _66_PlusOne {
+    public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;
@@ -14,9 +16,8 @@ public class _66_PlusOne implements TestSolution {
         return digits;
     }
 
-    @Override
-    public void test() {
-        int[] sample = {9, 9, 9, 9};
-        plusOne(sample);
+    public static void main(String[] args) {
+        int[] sample = { 9, 9, 9, 9 };
+        System.out.println(Arrays.toString(plusOne(sample)));
     }
 }

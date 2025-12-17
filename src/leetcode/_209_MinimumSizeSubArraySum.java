@@ -1,10 +1,8 @@
 package leetcode;
 
-import java.util.Arrays;
+public class _209_MinimumSizeSubArraySum {
 
-public class _209_MinimumSizeSubArraySum implements TestSolution {
-
-    public int minSubArrayLen(int target, int[] nums) {
+    public static int minSubArrayLen(int target, int[] nums) {
         int minsteps = Integer.MAX_VALUE;
 
         for (int i = 0; i < nums.length; i++) {
@@ -20,9 +18,9 @@ public class _209_MinimumSizeSubArraySum implements TestSolution {
         return minsteps == Integer.MAX_VALUE ? 0 : minsteps;
     }
 
-    public int minSubArrayLen1(int target, int[] nums) {
+    public static int minSubArrayLen1(int target, int[] nums) {
         int minsteps = Integer.MAX_VALUE;
-        int c1 = 0, c2 = 0, sum =0;
+        int c1 = 0, c2 = 0, sum = 0;
 
         while (c2 < nums.length || sum >= target) {
             if (sum >= target) {
@@ -37,9 +35,9 @@ public class _209_MinimumSizeSubArraySum implements TestSolution {
         return minsteps == Integer.MAX_VALUE ? 0 : minsteps;
     }
 
-    @Override
-    public void test() {
-        int[] nums = {2, 3, 1, 2, 4, 3};
+    public static void main(String[] args) {
+        int[] nums = { 2, 3, 1, 2, 4, 3 };
+        System.out.println(minSubArrayLen(7, nums));
         System.out.println(minSubArrayLen1(7, nums));
     }
 }

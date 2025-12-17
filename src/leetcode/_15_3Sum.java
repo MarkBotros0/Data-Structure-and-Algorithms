@@ -2,9 +2,9 @@ package leetcode;
 
 import java.util.*;
 
-public class _15_3Sum implements TestSolution {
+public class _15_3Sum {
 
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> arrayOfTriplets = new ArrayList<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
@@ -35,10 +35,9 @@ public class _15_3Sum implements TestSolution {
         return arrayOfTriplets;
     }
 
-    @Override
-    public void test() {
-        int[] numbers = {-1, 0, 1, 2, -1, -4};
-        int[] numbers2 = {0, 0, 0, 0};
+    public static void main(String[] args) {
+        int[] numbers = { -1, 0, 1, 2, -1, -4 };
+        int[] numbers2 = { 0, 0, 0, 0 };
         System.out.println(threeSum(numbers2));
     }
 }

@@ -2,16 +2,17 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class _35_SearchInsertPosition implements TestSolution {
-    public int searchInsert(int[] nums, int target) {
+public class _35_SearchInsertPosition {
+    public static int searchInsert(int[] nums, int target) {
         int result = Arrays.binarySearch(nums, target);
         if (result < 0) {
-//           (-(insertion point) -1) = result -> insertion point = (result * -1) - 1
+            // (-(insertion point) -1) = result -> insertion point = (result * -1) - 1
             return (result * -1) - 1;
         }
         return result;
     }
-    public int searchInsert1(int[] nums, int target) {
+
+    public static int searchInsert1(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;
 
@@ -28,9 +29,8 @@ public class _35_SearchInsertPosition implements TestSolution {
         return start;
     }
 
-    @Override
-    public void test() {
-        int[] nums = {1, 3, 5, 6};
+    public static void main(String[] args) {
+        int[] nums = { 1, 3, 5, 6 };
         System.out.println(searchInsert(nums, 4));
 
     }

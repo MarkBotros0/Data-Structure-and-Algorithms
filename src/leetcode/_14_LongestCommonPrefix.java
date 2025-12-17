@@ -2,20 +2,20 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class _14_LongestCommonPrefix implements TestSolution{
+public class _14_LongestCommonPrefix {
 
-    public String longestCommonPrefix(String[] strs){
-        if (strs.length == 1){
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs.length == 1) {
             return strs[0];
         }
 
         StringBuilder longestPrefixBuilder = new StringBuilder();
         Arrays.sort(strs);
         String first = strs[0];
-        String last = strs[strs.length-1];
+        String last = strs[strs.length - 1];
 
         for (int i = 0; i < Math.min(first.length(), last.length()); i++) {
-            if (first.charAt(i) != last.charAt(i)){
+            if (first.charAt(i) != last.charAt(i)) {
                 return longestPrefixBuilder.toString();
             }
             longestPrefixBuilder.append(first.charAt(i));
@@ -23,9 +23,8 @@ public class _14_LongestCommonPrefix implements TestSolution{
         return longestPrefixBuilder.toString();
     }
 
-    @Override
-    public void test() {
-        String[] strs = {"flower", "flow", "flight"};
+    public static void main(String[] args) {
+        String[] strs = { "flower", "flow", "flight" };
         System.out.println(longestCommonPrefix(strs));
     }
 

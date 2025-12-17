@@ -1,8 +1,8 @@
 package leetcode;
 
-public class _11_ContainerWithMostWater implements TestSolution {
+public class _11_ContainerWithMostWater {
 
-    public int maxArea(int[] height) {
+    public static int maxArea(int[] height) {
         int firstIndex = 0;
         int lastIndex = height.length - 1;
         int maxArea = 0;
@@ -21,8 +21,7 @@ public class _11_ContainerWithMostWater implements TestSolution {
         return maxArea;
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         int[] numbers = {1,8,6,2,5,4,8,3,7};
         System.out.println(maxArea(numbers));
     }

@@ -1,8 +1,8 @@
 package leetcode;
 
 //392
-public class _392_IsSubsequence implements TestSolution {
-    public boolean isSubsequence(String s, String t) {
+public class _392_IsSubsequence {
+    public static boolean isSubsequence(String s, String t) {
         int s_pointer = 0;
         int t_pointer = 0;
         while ((s_pointer < s.length()) && (t_pointer < t.length())) {
@@ -14,8 +14,7 @@ public class _392_IsSubsequence implements TestSolution {
         return s_pointer == s.length();
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(isSubsequence("acb", "ahbgdc"));
     }
 }

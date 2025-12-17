@@ -2,10 +2,11 @@ package leetcode;
 
 import java.util.Stack;
 
-public class _20_ValidParentheses implements TestSolution {
+public class _20_ValidParentheses {
 
-    public boolean isValid(String s) {
-        if (s.length() == 1) return false;
+    public static boolean isValid(String s) {
+        if (s.length() == 1)
+            return false;
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '[') {
@@ -21,8 +22,7 @@ public class _20_ValidParentheses implements TestSolution {
         return stack.isEmpty();
     }
 
-    @Override
-    public void test() {
+    public static void main(String[] args) {
         System.out.println(isValid("()[]{}"));
     }
 }

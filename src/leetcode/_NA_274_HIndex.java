@@ -1,13 +1,12 @@
 package leetcode;
 
-public class _NA_274_HIndex implements TestSolution {
+public class _NA_274_HIndex {
 
-    public int hIndex(int[] citations) {
+    public static int hIndex(int[] citations) {
         return 0;
     }
 
-    @Override
-    public void test() {
-
+    public static void main(String[] args) {
+        System.out.println(hIndex(new int[]{3, 0, 6, 1, 5}));
     }
 }
