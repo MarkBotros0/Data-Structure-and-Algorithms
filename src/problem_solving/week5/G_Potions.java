@@ -1,6 +1,5 @@
 package problem_solving.week5;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
