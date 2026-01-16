@@ -18,9 +18,8 @@ public class Fibonacci {
     }
 
     private static int findFibonacciRecursive(int x) {
-        if (x < 3) {
-            return 1;
-        }
+        if (x == 0) return 0;
+        if (x < 3) return 1;
         return findFibonacciRecursive(x - 1) + findFibonacciRecursive(x - 2);
     }
 }
