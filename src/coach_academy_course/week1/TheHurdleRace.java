@@ -1,0 +1,23 @@
+package coach_academy_course.week1;
+
+import java.util.Scanner;
+
+public class TheHurdleRace {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int jumpHeight = sc.nextInt();
+
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            max = Math.max(max, arr[i]);
+        }
+        System.out.println(Math.max(max - jumpHeight, 0));
+    }
+}
