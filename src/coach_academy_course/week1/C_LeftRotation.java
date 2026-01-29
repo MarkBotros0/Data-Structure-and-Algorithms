@@ -2,7 +2,7 @@ package coach_academy_course.week1;
 
 import java.util.Scanner;
 
-public class LeftRotation {
+public class C_LeftRotation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

@@ -2,7 +2,7 @@ package coach_academy_course.week1;
 
 import java.util.Scanner;
 
-public class CompareTheTriplets {
+public class E_CompareTheTriplets {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

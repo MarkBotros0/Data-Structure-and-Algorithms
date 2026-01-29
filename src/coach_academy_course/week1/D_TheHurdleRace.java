@@ -2,21 +2,22 @@ package coach_academy_course.week1;
 
 import java.util.Scanner;
 
-public class AVeryBigSum {
+public class D_TheHurdleRace {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        long[] arr = new long[n];
+        int jumpHeight = sc.nextInt();
+
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextLong();
+            arr[i] = sc.nextInt();
         }
 
-        long sum = 0;
+        int max = 0;
         for (int i = 0; i < n; i++) {
-            sum += arr[i];
+            max = Math.max(max, arr[i]);
         }
-
-        System.out.println(sum);
+        System.out.println(Math.max(max - jumpHeight, 0));
     }
 }

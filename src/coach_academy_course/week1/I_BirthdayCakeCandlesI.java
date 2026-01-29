@@ -2,7 +2,7 @@ package coach_academy_course.week1;
 
 import java.util.*;
 
-public class BirthdayCakeCandlesI {
+public class I_BirthdayCakeCandlesI {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

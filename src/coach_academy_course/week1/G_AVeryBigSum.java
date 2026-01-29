@@ -2,16 +2,19 @@ package coach_academy_course.week1;
 
 import java.util.Scanner;
 
-public class SimpleArraySum {
+public class G_AVeryBigSum {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-
-        int sum = 0;
-
+        long[] arr = new long[n];
         for (int i = 0; i < n; i++) {
-            sum += sc.nextInt();
+            arr[i] = sc.nextLong();
+        }
+
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
         }
 
         System.out.println(sum);
